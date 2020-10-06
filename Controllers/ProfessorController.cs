@@ -30,9 +30,10 @@ namespace ProvaWeb2Ex4.Controllers
             if (ModelState.IsValid)
             {
                 db.Professors.Add(professor);
-                await db.SaveChangesAsync();
+                await db.SaveChangesAsync();             
+                ViewBag.ErrorMessage = "Adicionado com Sucesso";
             }
-
+            ViewBag.ErrorMessage = "Erro Adiconar";
             return View(professor);
         }
         
